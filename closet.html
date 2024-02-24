@@ -91,7 +91,14 @@
     
         <div class="imagecontainer">
             <img src = "/testImages/body.png" class = "character">
-            <img class="shirt">
+            <div class = "shirt">
+                <img id="shirtClass1">
+                <img id="shirtClass2">
+                <img id="shirtClass3">
+                <img id="shirtClass4">
+            </div>
+            
+
             <img class="hair">
             <img class = "bottoms">
             <img class = "shoes">
@@ -164,27 +171,32 @@
     let accOn = false;
 
     function addShirt(shirt){
-    if(shirtOn==true){
-        let shirtClass = document.getElementsByClassName("shirt");
-        let oldShirt = shirtClass[1]; // Corrected the typo here
-        oldShirt.parentNode.removeChild(oldShirt); // Removed the old shirt
+        if(shirtOn && (shirt === "shirt1" || shirt === "shirt2" || shirt === "shirt3" || shirt === "shirt4")) {
+        let oldShirt = document.querySelector('.shirt');
+        if(oldShirt) {
+            oldShirt.parentNode.removeChild(oldShirt); // Removed the old shirt
+        }
     }
     const shirtLocation = document.querySelector('.imagecontainer');
     const newShirt = new Image();
     if(shirt=="shirt1"){
         newShirt.src = '/testImages/blueshirt.png'; 
+        newShirt.className = "shirtClass1";
     }
     else if(shirt=='shirt2'){
         newShirt.src = '/testImages/shirt2.png';
+        newShirt.className = "shirtClass2";
     }
     else if(shirt == 'shirt3'){
         newShirt.src = '/testImages/shirt3.png';
+        newShirt.className = "shirtClass3";
     }
     else if(shirt == 'shirt4'){
         newShirt.src = '/testImages/shirt4.png';
+        newShirt.className = "shirtClass4";
     }
     
-    newShirt.className = "shirt";
+    
     shirtLocation.appendChild(newShirt);
     shirtOn = true;
 }

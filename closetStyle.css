@@ -14,13 +14,35 @@
     padding-right:70px;
 
 }
-.shirt{
+.shirtClass1{
     position:absolute;
-    top:165px;
-    left:85px;
+    top:160px;
+    left:80px;
     z-index:2;
     
 }
+
+.shirtClass2{
+    position:absolute;
+    top:160px;
+    left:78px;
+    z-index:2;
+}
+
+.shirtClass3{
+    position:absolute;
+    top:160px;
+    left:80px;
+    z-index:2;
+}
+
+.shirtClass4{
+    position:absolute;
+    top:140px;
+    left:75px;
+    z-index:2;
+}
+
 .bottoms{
     position:absolute;
     top:230px;
