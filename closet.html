@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="/closetStyle.css">
     <!-- <script src = "/script.js" defer></script> -->
     <title>closet</title>
@@ -15,7 +16,7 @@
         let isHair = false;
     </script> -->
 
-    <div class="container">
+    
         
         <!-- <h1>create an outfit!</h1>
         
@@ -27,7 +28,24 @@
                 /* background-size: cover; */
                 background-repeat: no-repeat;
             }
+
+            .row {
+            display: flex;
+            } 
+
+            .col {
+            flex: 20%;
+            } */
+
+            table {
+            border-collapse: separate;
+            border-spacing: 30px; /* Adjust the spacing as needed */
+        }
+            
+
+
         </style>
+
 
 <div class="container">
         
@@ -47,7 +65,8 @@
 .clothing {
     background-color: transparent;
     /* border: none; */
-    padding: 0;
+    padding-left: 10px;
+    padding-bottom:10px;
 }
 
 .clothing img {
@@ -62,22 +81,73 @@
     top: 400px;
 }
 </style>
-
-<button id="shirt1" class="clothing" onclick="addShirt1()"><img src="/testImages/blueshirt.png" /></button>
+<div class ="row">
+    
+        <div class="imagecontainer">
+            <img src = "/testImages/body.png" class = "character">
+            <img class="shirt">
+            <img class="hair">
+            <img class = "bottoms">
+        </div>
+    
 
     
-<button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button>
+        <!-- <table>
+            <tr>
+              <td>-->
+            <div class = "col"><button id="shirt1" class="clothing" onclick="addShirt1()"><img src="/testImages/blueshirt.png" /></button></td>
+            </div>
+              <div><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
+              <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
+              <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
+              <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
+
+
+
+            </tr>
+            <tr>
+                <td><button id="shirt1" class="clothing" onclick="addShirt1()"><img src="/testImages/blueshirt.png" /></button></td>
+                <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
+                <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
+                <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
+                <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
+
+              
+            </tr>
+            <tr>
+                <td><button id="shirt1" class="clothing" onclick="addShirt1()"><img src="/testImages/blueshirt.png" /></button></td>
+                <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
+                <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
+                <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
+                <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
+
+              
+            </tr>
+
+            <tr>
+                <td><button id="shirt1" class="clothing" onclick="addShirt1()"><img src="/testImages/blueshirt.png" /></button></td>
+                <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
+                <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
+                <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
+                <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
+
+              
+            </tr>
+          </table>
+                
+    </div>
+</div>
+
+
+
+
+    
     
 
 </div>
 
 
-<div class="imagecontainer">
-    <img src = "/testImages/body.png" class = "character">
-    <img class="shirt">
-    <img class="hair">
-    <img class = "bottoms">
-</div>
+
 
 
 <script>
