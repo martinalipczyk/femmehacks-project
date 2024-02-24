@@ -101,7 +101,7 @@
         <table>
             <tr>
               <td><button id="shirt1" class="clothing" onclick="addShirt('shirt1')"><img src="/testImages/blueshirt.png" /></button></td>
-              <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
+              <td><button id="skirt1" class="clothing" onclick ="addBottoms('bottom1')"><img src="/testImages/skirt.png"/></button></td>
               <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
               <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
               <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
@@ -111,7 +111,7 @@
             </tr>
             <tr>
                 <td><button id="shirt2" class="clothing" onclick="addShirt('shirt2')"><img src="/testImages/shirt2.png" /></button></td>
-                <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
+                <td><button id="bottom2" class="clothing" onclick ="addBottoms('bottom2')"><img src="/testImages/bottom2.png"/></button></td>
                 <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
                 <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
                 <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
@@ -120,7 +120,7 @@
             </tr>
             <tr>
                 <td><button id="shirt3" class="clothing" onclick="addShirt('shirt3')"><img src="/testImages/shirt3.png" /></button></td>
-                <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
+                <td><button id="bottom3" class="clothing" onclick ="addBottoms('bottom3')"><img src="/testImages/bottom3.png"/></button></td>
                 <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
                 <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
                 <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
@@ -130,7 +130,7 @@
 
             <tr>
                 <td><button id="shirt1" class="clothing" onclick="addShirt1('shirt4')"><img src="/testImages/blueshirt.png" /></button></td>
-                <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
+                <td><button id="bottom4" class="clothing" onclick ="addBottoms('bottom4')"><img src="/testImages/bottom4.png"/></button></td>
                 <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
                 <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
                 <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
@@ -185,13 +185,29 @@
 }
 
 
-    function addSkirt1(){
-        const skirtLocation = document.querySelector('.imagecontainer');
-        const newSkirt = new Image();
-        newSkirt.src = '/testImages/skirt.png'; 
-        newSkirt.className = "bottoms";
-        skirtLocation.appendChild(newSkirt);
-        skirtOn = true;
+    function addBottoms(bottom){
+        if(bottomsOn==true){
+        let bottomsClass = document.getElementsByClassName("bottoms");
+        let oldBottom = bottomsClass[0]; // Corrected the typo here
+        oldBottom.parentNode.removeChild(oldBottom); // Removed the old shirt
+    }
+        const bottomsLocation = document.querySelector('.imagecontainer');
+        const newBottom = new Image();
+        if(bottom=="bottom1"){
+        newBottom.src = '/testImages/skirt.png'; 
+        }
+        else if(bottom=='bottom2'){
+        newBottom.src = '/testImages/bottom2.png';
+        }
+        else if(bottom == 'bottom3'){
+        newBottom.src = '/testImages/bottom3.png';
+        }
+        else if(bottom == 'bottom4'){
+        newBottom.src = '/testImages/bottom4.png';
+        }
+        newBottom.className = "bottoms";
+        bottomsLocation.appendChild(newBottom);
+        bottomsOn = true;
     }
 </script>
 
