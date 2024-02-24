@@ -1,10 +1,10 @@
-.container{
+.image-container{
     position: relative;
     top:0;
     left:0;
 }
 
-.body{
+.character{
     position:relative;
     top:0;
     left:0;
