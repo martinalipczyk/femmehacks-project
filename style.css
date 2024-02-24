@@ -1,4 +1,8 @@
-.container{
+*{
+    text-align:center;
+}
+
+/* .container{
     display:flex;
     justify-content:center;
 }
@@ -11,4 +15,4 @@ html{
     text-align: center;
 
 
-}
+} */
