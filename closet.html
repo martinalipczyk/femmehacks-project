@@ -9,59 +9,60 @@
 <body>
     <div class="container">
         
-        <h1>create an outfit!</h1>
+        <!-- <h1>create an outfit!</h1>
         
-        <p>select from the clothing items</p>
+        <p>select from the clothing items</p> -->
 
         <style>
             body{
-                background-image: url('/backgrounds/testclosetbg.jpg');
-                background-size: cover;
+                background-image: url('/backgrounds/closetbg.png');
+                /* background-size: cover; */
                 background-repeat: no-repeat;
             }
         </style>
+
+<style>
+    #shirt1{
+        background-color: transparent;
+        border: none;
+        padding:0;
+    }
+    #shirt1 img{
+        opacity: 1
+    }
+
+    #skirt{
+        background-color: transparent;
+        border: none;
+        padding: 0;
+    }
+
+    skirt img{
+        opacity:1
+    }
+</style>
+
+
+
+<ul>
+    <li><button id="shirt1" onclick="addShirt1()"><img src="/testImages/blueshirt.png" /></button></li>
+    <li><button id="shirt1"><img src="/testImages/blueshirt.png" /> </button></li>
+ </ul>
+
+ <p>bottoms!</p>
+ <ul>
+    <li><button id = "skirt"><img src = "/testImages/skirt.png"/></button></li>
+ </ul>
     </div>
     
-    <div class="image-container">
+    <div class="imagecontainer">
         <img src = "/testImages/body.png" class = "character">
         <!-- <img src = "/testImages/blueshirt.png" class="shirt">
         <img src = "/testImages/brunettehair.png" class="hair"> -->
         <!-- <img src = "/testImages/skirt.png" class = "bottoms"> --> 
     </div>
     
-    <p>shirts!</p>
-
-    <style>
-        #shirt1{
-            background-color: transparent;
-            /* border: none; */
-            padding:0;
-        }
-        #shirt1 img{
-            opacity: 1
-        }
-
-        #skirt{
-            background-color: transparent;
-            /* border: none; */
-            padding: 0;
-        }
-
-        skirt img{
-            opacity:1
-        }
-    </style>
-
-
-
-    <ul>
-        <li><button id="shirt1"><img src="/testImages/blueshirt.png" /></button></li>
-        <li><button id="shirt1"><img src="/testImages/blueshirt.png" /> </button></li>
-     </ul>
-
-     <p>bottoms!</p>
-     <ul>
-        <li><button id = "skirt"><img src = "/testImages/skirt.png"/></button></li>
+    
      </ul>
     
 

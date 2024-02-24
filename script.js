@@ -1,8 +1,15 @@
-const shirt1 = document.querySelector("#shirt1");
+function addShirt1(){
+    addShirt("shirt1")
+}
 
-shirt1.addEventListener('click', addShirt(shirt1));
 
 function addShirt(shirt){
     const newShirt = document.createElement("img");
-    newShirt.className="shirt";
+    // newShirt.className="shirt";
+    if(shirt == "shirt1"){
+        newShirt.src = '/testImages/blueshirt';
+        
+    }
+    
+    document.imagecontainer.appendChild(newShirt);
 }
