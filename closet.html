@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/closetStyle.css">
+    <script src = "/script.js" defer></script>
     <title>closet</title>
 </head>
 <body>
@@ -25,6 +26,15 @@
     .clothing {
         background-color: transparent;
         /* border: none; */
+        padding:0;
+    }
+    #shirt1 img{
+        opacity: 1
+    }
+
+    #skirt{
+        background-color: transparent;
+        /* border: none; */
         padding: 0;
     }
 
@@ -35,18 +45,34 @@
     }
 </style>
 
-<button id="shirt1" class="clothing" onclick="addShirt1()"><img src="/testImages/blueshirt.png" /></button>
 
-<button id="skirt" class="clothing"><img src="/testImages/skirt.png"/></button>
 
-</div>
+<ul>
+    <li><button id="shirt1" onclick="addShirt1()"><img src="/testImages/blueshirt.png" /></button></li>
+    <script>
+    function addShirt1(){
+        const shirtLocation = document.querySelector('.imagecontainer');
+        const newShirt = new Image();
+        newShirt.src = '/testImages/blueshirt.png'; 
+        newShirt.className = "shirt";
+        shirtLocation.appendChild(newShirt);
+    }</script>
+    
+    
+    <li><button id="shirt1"><img src="/testImages/blueshirt.png" /> </button></li>
+ </ul>
 
+ <p>bottoms!</p>
+ <ul>
+    <li><button id = "skirt"><img src = "/testImages/skirt.png"/></button></li>
+ </ul>
+    </div>
     
     <div class="imagecontainer">
         <img src = "/testImages/body.png" class = "character">
-        <!-- <img src = "/testImages/blueshirt.png" class="shirt">
-        <img src = "/testImages/brunettehair.png" class="hair"> -->
-        <!-- <img src = "/testImages/skirt.png" class = "bottoms"> --> 
+        <img class="shirt">
+        <img class="hair">
+        <img class = "bottoms">
     </div>
     
 

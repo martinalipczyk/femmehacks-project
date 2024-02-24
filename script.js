@@ -1,15 +1,9 @@
-function addShirt1(){
-    addShirt("shirt1")
-}
+// function addShirt1(){
+//     const shirtLocation = document.querySelector('.imagecontainer');
+//     const newShirt = new Image();
+//     newShirt.src = '/testImages/blueshirt.png'; 
+//     newShirt.className = "shirt";
+//     shirtLocation.appendChild(newShirt);
+// }
 
 
-function addShirt(shirt){
-    const newShirt = document.createElement("img");
-    // newShirt.className="shirt";
-    if(shirt == "shirt1"){
-        newShirt.src = '/testImages/blueshirt';
-        
-    }
-    
-    document.imagecontainer.appendChild(newShirt);
-}
