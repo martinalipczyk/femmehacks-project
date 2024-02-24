@@ -100,7 +100,16 @@
             
 
             <img class="hair">
-            <img class = "bottoms">
+
+            <div class = bottoms>
+                <img class = "bottomsClass1">
+                <img class = "bottomsClass2">
+                <img class = "bottomsClass3">
+                <img class = "bottomsClass4">
+
+
+            </div>
+            
             <img class = "shoes">
             <img class = "accessories">
         </div>
@@ -170,63 +179,57 @@
     let shoesOn = false;
     let accOn = false;
 
-    function addShirt(shirt){
-        if(shirtOn) {
-        let oldShirt = document.getElementsByClassName('shirt');
-        while(shirt[0]) {
-        shirt[0].parentNode.removeChild(shirt[0]); 
-        }
-
-    }
-    const shirtLocation = document.querySelector('.imagecontainer');
+    function addShirt(shirt) {
+    const shirtLocation = document.querySelector('.shirt');
     const newShirt = new Image();
-    if(shirt=="shirt1"){
-        newShirt.src = '/testImages/blueshirt.png'; 
-        newShirt.className = "shirtClass1";
+    
+    while (shirtLocation.firstChild) {
+        shirtLocation.removeChild(shirtLocation.firstChild);
     }
-    else if(shirt=='shirt2'){
+
+    if (shirt === "shirt1") {
+        newShirt.src = '/testImages/blueshirt.png';
+        newShirt.className = "shirtClass1";
+    } else if (shirt === 'shirt2') {
         newShirt.src = '/testImages/shirt2.png';
         newShirt.className = "shirtClass2";
-    }
-    else if(shirt == 'shirt3'){
+    } else if (shirt === 'shirt3') {
         newShirt.src = '/testImages/shirt3.png';
         newShirt.className = "shirtClass3";
-    }
-    else if(shirt == 'shirt4'){
+    } else if (shirt === 'shirt4') {
         newShirt.src = '/testImages/shirt4.png';
         newShirt.className = "shirtClass4";
     }
-    
-    
+
     shirtLocation.appendChild(newShirt);
-    shirtOn = true;
 }
 
 
-    function addBottoms(bottom){
-        if(bottomsOn==true){
-        let bottomsClass = document.getElementsByClassName("bottoms");
-        let oldBottom = bottomsClass[1]; // Corrected the typo here
-        oldBottom.parentNode.removeChild(oldBottom); // Removed the old shirt
+
+function addBottoms(bottom) {
+    const bottomLocation = document.querySelector('.bottoms');
+    const newBottom = new Image();
+    
+    while (bottomLocation.firstChild) {
+        bottomLocation.removeChild(bottomLocation.firstChild);
     }
-        const bottomsLocation = document.querySelector('.imagecontainer');
-        const newBottom = new Image();
-        if(bottom=="bottom1"){
-        newBottom.src = '/testImages/skirt.png'; 
-        }
-        else if(bottom=='bottom2'){
+
+    if (bottom === "bottom1") {
+        newBottom.src = '/testImages/skirt.png';
+        newBottom.className = "bottomsClass1";
+    } else if (bottom === 'bottom2') {
         newBottom.src = '/testImages/bottom2.png';
-        }
-        else if(bottom == 'bottom3'){
+        newBottom.className = "bottomsClass2";
+    } else if (bottom === 'bottom3') {
         newBottom.src = '/testImages/bottom3.png';
-        }
-        else if(bottom == 'bottom4'){
+        newBottom.className = "bottomsClass3";
+    } else if (bottom === 'bottom4') {
         newBottom.src = '/testImages/bottom4.png';
-            }
-        newBottom.className = "bottoms";
-        bottomsLocation.appendChild(newBottom);
-        bottomsOn = true;
+        newBottom.className = "bottomsClass4";
     }
+
+    bottomLocation.appendChild(newBottom);
+}
 
 
     function addShoes(shoe){
