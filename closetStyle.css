@@ -38,12 +38,30 @@
 
 .shirtClass4{
     position:absolute;
-    top:140px;
-    left:75px;
+    top:130px;
+    left:70px;
     z-index:2;
 }
 
-.bottoms{
+.bottomsClass1{
+    position:absolute;
+    top:230px;
+    left:30px;
+    z-index:2;
+}
+.bottomsClass2{
+    position:absolute;
+    top:230px;
+    left:30px;
+    z-index:2;
+}
+.bottomsClass3{
+    position:absolute;
+    top:230px;
+    left:30px;
+    z-index:2;
+}
+.bottomsClass4{
     position:absolute;
     top:230px;
     left:30px;
