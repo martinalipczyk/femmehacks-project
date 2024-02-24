@@ -4,10 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/closetStyle.css">
-    <script src = "/script.js" defer></script>
+    <!-- <script src = "/script.js" defer></script> -->
     <title>closet</title>
 </head>
 <body>
+    <embed name="chillmusic" src="/music/backgroundmusic.mp3" loop="true" hidden="true" autostart="true">
+    <!-- <script>
+        let isShirt = false;
+        let isBottoms = false;
+        let isHair = false;
+    </script> -->
+
     <div class="container">
         
         <!-- <h1>create an outfit!</h1>
@@ -22,59 +29,82 @@
             }
         </style>
 
+<div class="container">
+        
+    <!-- <h1>create an outfit!</h1>
+    
+    <p>select from the clothing items</p> -->
+
+    <style>
+        body{
+            background-image: url('/backgrounds/closetbg.png');
+            /* background-size: cover; */
+            background-repeat: no-repeat;
+        }
+    </style>
+
 <style>
-    .clothing {
-        background-color: transparent;
-        /* border: none; */
-        padding:0;
-    }
-    #shirt1 img{
-        opacity: 1
-    }
+.clothing {
+    background-color: transparent;
+    /* border: none; */
+    padding: 0;
+}
 
-    #skirt{
-        background-color: transparent;
-        /* border: none; */
-        padding: 0;
-    }
+.clothing img {
+    opacity: 1;
+    width: 100px; 
+    height: auto; 
+}
 
-    .clothing img {
-        opacity: 1;
-        width: 50px; 
-        height: auto; 
-    }
+.shirt1{
+    position: absolute;
+    left: 1;
+    top: 400px;
+}
 </style>
 
+<button id="shirt1" class="clothing" onclick="addShirt1()"><img src="/testImages/blueshirt.png" /></button>
+
+    
+<button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button>
+    
+
+</div>
 
 
+<div class="imagecontainer">
+    <img src = "/testImages/body.png" class = "character">
+    <img class="shirt">
+    <img class="hair">
+    <img class = "bottoms">
+</div>
 
-    <button id="shirt1" onclick="addShirt1()"><img src="/testImages/blueshirt.png" /></button>
-    <script>
+
+<script>
+    
     function addShirt1(){
+        // if(isShirt==true){
+        //     let shirtClass = document.getElementsByClassName("shirt");
+        //     oldShirt.removeChild()
+        // }
         const shirtLocation = document.querySelector('.imagecontainer');
         const newShirt = new Image();
         newShirt.src = '/testImages/blueshirt.png'; 
         newShirt.className = "shirt";
         shirtLocation.appendChild(newShirt);
-    }</script>
-    
+    }
+
+    function addSkirt1(){
+        const skirtLocation = document.querySelector('.imagecontainer');
+        const newSkirt = new Image();
+        newSkirt.src = '/testImages/skirt.png'; 
+        newSkirt.className = "bottoms";
+        skirtLocation.appendChild(newSkirt);
+    }
+</script>
 
 
- <p>bottoms!</p>
 
-    <button id = "skirt"><img src = "/testImages/skirt.png"/></button>
-
-</div>
-    
-    <div class="imagecontainer">
-        <img src = "/testImages/body.png" class = "character">
-        <img class="shirt">
-        <img class="hair">
-        <img class = "bottoms">
-    </div>
-    
-
-    
     
                 
     
