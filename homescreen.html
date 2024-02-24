@@ -7,22 +7,42 @@
 	<script src="/script.js" defer></script>
     
     <title>home screen</title>
-</head>
-<body>
-
     <style>
-        body{
+        body {
             background-image: url('/backgrounds/homebg.png');
             background-size: cover;
             background-repeat: no-repeat;
-            width: 10;
-            height: 100%;
-            border: solid 1px white;
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            margin: 0; 
+            position: relative; /* Make body relative to position its children */
+        }
+
+        .character {
+            position: absolute; /* Position relative to its closest positioned ancestor */
+            bottom: 0; /* Align to the bottom */
+            left: 0; /* Align to the left */
+        }
+
+        button#start {
+            background-color: transparent;
+            border: none;
+            width: 200px;
+            max-width: 400px;
+            height: auto; 
+            padding: 0; 
+        }
+
+        button#start img {
+            width: 100%; 
+            height: auto; 
         }
     </style>
-    <td><button id="start" onclick="window.location.href=''><img src="/testImages/blueshirt.png" /></button></td>
-
-    <!-- <embed name="chillmusic" src="/music/backgroundmusic.mp3" loop="true" hidden="true" autostart="true"> -->
-
+</head>
+<body>
+    <img src="/testImages/girl.png" class="character"> <!-- Moved the image here -->
+    <button id="start" onclick="window.location.href='closet.html'"><img src="/buttons/start.png" /></button>
 </body>
 </html>
