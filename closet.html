@@ -92,10 +92,10 @@
         <div class="imagecontainer">
             <img src = "/testImages/body.png" class = "character">
             <div class = "shirt">
-                <img id="shirtClass1">
-                <img id="shirtClass2">
-                <img id="shirtClass3">
-                <img id="shirtClass4">
+                <img class="shirtClass1">
+                <img class="shirtClass2">
+                <img class="shirtClass3">
+                <img class="shirtClass4">
             </div>
             
 
@@ -171,11 +171,12 @@
     let accOn = false;
 
     function addShirt(shirt){
-        if(shirtOn && (shirt === "shirt1" || shirt === "shirt2" || shirt === "shirt3" || shirt === "shirt4")) {
-        let oldShirt = document.querySelector('.shirt');
-        if(oldShirt) {
-            oldShirt.parentNode.removeChild(oldShirt); // Removed the old shirt
+        if(shirtOn) {
+        let oldShirt = document.getElementsByClassName('shirt');
+        while(shirt[0]) {
+        shirt[0].parentNode.removeChild(shirt[0]); 
         }
+
     }
     const shirtLocation = document.querySelector('.imagecontainer');
     const newShirt = new Image();
