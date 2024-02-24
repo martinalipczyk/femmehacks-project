@@ -73,11 +73,11 @@
     height: auto; 
 }
 
-.shirt1{
+#shirt1{
     position: absolute;
     left: 1;
-    top: 400px;
-    padding-right: 400px;
+    top: 20px;
+    padding-right: 20px;
 }
 .skirt1{
     position: absolute;
@@ -99,7 +99,13 @@
             </div>
             
 
-            <img class="hair">
+            <div class="hair">
+                <img class = "hairClass1">
+                <img class = "hairClass2">
+                <img class = "hairClass3">
+                <img class = "hairClass4">
+
+            </div>
 
             <div class = bottoms>
                 <img class = "bottomsClass1">
@@ -110,8 +116,20 @@
 
             </div>
             
-            <img class = "shoes">
-            <img class = "accessories">
+            <div class = "shoes">
+                <img class = "shoeClass1">
+                <img class = "shoeClass2">
+                <img class = "shoeClass3">
+                <img class = "shoeClass4">
+
+            </div>
+            <div class = "accessories">
+                <img class = "accClass1">
+                <img class = "accClass2">
+                <img class = "accClass3">
+                <img class = "accClass4">
+
+            </div>
         </div>
     
 
@@ -233,78 +251,94 @@ function addBottoms(bottom) {
 
 
     function addShoes(shoe){
-        if(shoesOn==true){
-        let shoesClass = document.getElementsByClassName("shoes");
-        let oldShoes = shoesClass[1]; // Corrected the typo here
-        oldShoes.parentNode.removeChild(oldShoes); // Removed the old shirt
-    }
-        const shoesLocation = document.querySelector('.imagecontainer');
+        const shoeLocation = document.querySelector('.shoes');
         const newShoes = new Image();
+    
+    while (shoeLocation.firstChild) {
+        shoeLocation.removeChild(shoeLocation.firstChild);
+    }
+        
         if(shoe=="shoe1"){
         newShoes.src = '/testImages/shoes1.png'; 
+        newShoes.className = "shoeClass1";
+
         }
         else if(shoe=='shoe2'){
         newShoes.src = '/testImages/shoes2.png';
+        newShoes.className = "shoeClass2";
+
         }
         else if(shoe == 'shoe3'){
         newShoes.src = '/testImages/shoes3.png';
+        newShoes.className = "shoeClass3";
+
         }
         else if(shoe == 'shoe4'){
         newShoes.src = '/testImages/shoes4.png';
+        newShoes.className = "shoeClass4";
+
         }
-        newShoes.className = "shoes";
-        shoesLocation.appendChild(newShoes);
-        shoesOn = true;
+        shoeLocation.appendChild(newShoes);
     }
 
     function addAccessories(acc){
-        if(accOn==true){
-        let accClass = document.getElementsByClassName("accessories");
-        let oldAcc = accClass[1]; // Corrected the typo here
-        oldAcc.parentNode.removeChild(oldAcc); // Removed the old shirt
-    }
-        const accLocation = document.querySelector('.imagecontainer');
+        
+        const accLocation = document.querySelector('.accessories');
         const newAcc = new Image();
+        while (accLocation.firstChild) {
+        accLocation.removeChild(accLocation.firstChild);
+    }
         if(acc=="acc1"){
         newAcc.src = '/testImages/acc1.png'; 
+        newAcc.className = "accClass1";
+
         }
         else if(acc=='acc2'){
         newAcc.src = '/testImages/acc2.png';
+        newAcc.className = "accClass2";
+
         }
         else if(acc == 'acc3'){
         newAcc.src = '/testImages/acc3.png';
+        newAcc.className = "accClass3";
+
         }
         else if(acc == 'acc4'){
         newAcc.src = '/testImages/acc4.png';
+        newAcc.className = "accClass4";
+
         }
-        newAcc.className = "accessories";
         accLocation.appendChild(newAcc);
-        accOn = true;
     }
 
     function addHairs(hair){
-        if(hairOn==true){
-        let hairClass = document.getElementsByClassName("hair");
-        let oldHair = hairClass[1]; // Corrected the typo here
-        oldHair.parentNode.removeChild(oldHair); // Removed the old shirt
-    }
-        const hairLocation = document.querySelector('.imagecontainer');
+        
+        const hairLocation = document.querySelector('.hair');
         const newHair = new Image();
+        while (hairLocation.firstChild) {
+        hairLocation.removeChild(hairLocation.firstChild);
+    }
         if(hair == "hair1"){
             newHair.src = '/testImages/hair1.png'; 
+            newHair.className = "hairClass1";
+
         }
         else if(hair=='hair2'){
         newHair.src = '/testImages/hair2.png';
+        newHair.className = "hairClass2";
+
         }
         else if(hair == 'hair3'){
         newHair.src = '/testImages/hair3.png';
+        newHair.className = "hairClass3";
+
         }
         else if(hair == 'hair4'){
         newHair.src = '/testImages/hair4.png';
+        newHair.className = "hairClass4";
+
         }
-        newHair.className = "hair";
         hairLocation.appendChild(newHair);
-        hairOn = true;
     }
 </script>
 
