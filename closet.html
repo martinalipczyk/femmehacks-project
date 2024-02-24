@@ -65,8 +65,6 @@
 .clothing {
     background-color: transparent;
     border: none;
-    padding-left: 10px;
-    padding-bottom:10px;
 }
 
 .clothing img {
@@ -79,21 +77,32 @@
     position: absolute;
     left: 1;
     top: 400px;
+    padding-right: 400px;
 }
 .skirt1{
     position: absolute;
     left: 1;
     top: 400px;
-    padding-left:10px;
+    padding-top: 1000px;
+    
 }
 </style>
 <div class ="row">
     
         <div class="imagecontainer">
             <img src = "/testImages/body.png" class = "character">
-            <img class="shirt">
+            <div class = "shirt">
+                <img id="shirtClass1">
+                <img id="shirtClass2">
+                <img id="shirtClass3">
+                <img id="shirtClass4">
+            </div>
+            
+
             <img class="hair">
             <img class = "bottoms">
+            <img class = "shoes">
+            <img class = "accessories">
         </div>
     
 
@@ -102,9 +111,9 @@
             <tr>
               <td><button id="shirt1" class="clothing" onclick="addShirt('shirt1')"><img src="/testImages/blueshirt.png" /></button></td>
               <td><button id="skirt1" class="clothing" onclick ="addBottoms('bottom1')"><img src="/testImages/skirt.png"/></button></td>
-              <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
-              <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
-              <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
+              <td><button id="shoes1" class="clothing" onclick ="addShoes('shoe1')"><img src="/testImages/shoes1.png"/></button></td>
+              <td><button id="acc1" class="clothing" onclick ="addAccessories('acc1')"><img src="/testImages/acc1.png"/></button></td>
+              <td><button id="hair1" class="clothing" onclick ="addHairs('hair1')"><img src="/testImages/hair1.png"/></button></td>
 
 
 
@@ -112,28 +121,28 @@
             <tr>
                 <td><button id="shirt2" class="clothing" onclick="addShirt('shirt2')"><img src="/testImages/shirt2.png" /></button></td>
                 <td><button id="bottom2" class="clothing" onclick ="addBottoms('bottom2')"><img src="/testImages/bottom2.png"/></button></td>
-                <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
-                <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
-                <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
+                <td><button id="shoes2" class="clothing" onclick ="addShoes('shoe2')"><img src="/testImages/shoes2.png"/></button></td>
+                <td><button id="acc2" class="clothing" onclick ="addAccessories('acc2')"><img src="/testImages/acc2.png"/></button></td>
+                <td><button id="hair2" class="clothing" onclick ="addHairs('hair2')"><img src="/testImages/hair2.png"/></button></td>
 
               
             </tr>
             <tr>
                 <td><button id="shirt3" class="clothing" onclick="addShirt('shirt3')"><img src="/testImages/shirt3.png" /></button></td>
                 <td><button id="bottom3" class="clothing" onclick ="addBottoms('bottom3')"><img src="/testImages/bottom3.png"/></button></td>
-                <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
-                <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
-                <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
+                <td><button id="shoe3" class="clothing" onclick ="addShoes('shoe3')"><img src="/testImages/shoes3.png"/></button></td>
+                <td><button id="acc3" class="clothing" onclick ="addAccessories('acc3')"><img src="/testImages/acc3.png"/></button></td>
+                <td><button id="hair3" class="clothing" onclick ="addHairs('hair3')"><img src="/testImages/hair3.png"/></button></td>
 
               
             </tr>
 
             <tr>
-                <td><button id="shirt1" class="clothing" onclick="addShirt1('shirt4')"><img src="/testImages/blueshirt.png" /></button></td>
+                <td><button id="shirt4" class="clothing" onclick="addShirt('shirt4')"><img src="/testImages/shirt4.png" /></button></td>
                 <td><button id="bottom4" class="clothing" onclick ="addBottoms('bottom4')"><img src="/testImages/bottom4.png"/></button></td>
-                <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
-                <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
-                <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
+                <td><button id="shoe4" class="clothing" onclick ="addShoes('shoe4')"><img src="/testImages/shoes4.png"/></button></td>
+                <td><button id="acc4" class="clothing" onclick ="addAccessories('acc4')"><img src="/testImages/acc4.png"/></button></td>
+                <td><button id="hair4" class="clothing" onclick ="addHairs('hair4')"><img src="/testImages/hair4.png"/></button></td>
 
               
             </tr>
@@ -159,27 +168,35 @@
     let bottomsOn = false;
     let hairOn = false;
     let shoesOn = false;
-    let accessoriesOn = false;
+    let accOn = false;
 
     function addShirt(shirt){
-    if(shirtOn==true){
-        let shirtClass = document.getElementsByClassName("shirt");
-        let oldShirt = shirtClass[0]; // Corrected the typo here
-        oldShirt.parentNode.removeChild(oldShirt); // Removed the old shirt
+        if(shirtOn && (shirt === "shirt1" || shirt === "shirt2" || shirt === "shirt3" || shirt === "shirt4")) {
+        let oldShirt = document.querySelector('.shirt');
+        if(oldShirt) {
+            oldShirt.parentNode.removeChild(oldShirt); // Removed the old shirt
+        }
     }
     const shirtLocation = document.querySelector('.imagecontainer');
     const newShirt = new Image();
     if(shirt=="shirt1"){
         newShirt.src = '/testImages/blueshirt.png'; 
+        newShirt.className = "shirtClass1";
     }
     else if(shirt=='shirt2'){
         newShirt.src = '/testImages/shirt2.png';
+        newShirt.className = "shirtClass2";
     }
     else if(shirt == 'shirt3'){
         newShirt.src = '/testImages/shirt3.png';
+        newShirt.className = "shirtClass3";
+    }
+    else if(shirt == 'shirt4'){
+        newShirt.src = '/testImages/shirt4.png';
+        newShirt.className = "shirtClass4";
     }
     
-    newShirt.className = "shirt";
+    
     shirtLocation.appendChild(newShirt);
     shirtOn = true;
 }
@@ -188,7 +205,7 @@
     function addBottoms(bottom){
         if(bottomsOn==true){
         let bottomsClass = document.getElementsByClassName("bottoms");
-        let oldBottom = bottomsClass[0]; // Corrected the typo here
+        let oldBottom = bottomsClass[1]; // Corrected the typo here
         oldBottom.parentNode.removeChild(oldBottom); // Removed the old shirt
     }
         const bottomsLocation = document.querySelector('.imagecontainer');
@@ -204,10 +221,86 @@
         }
         else if(bottom == 'bottom4'){
         newBottom.src = '/testImages/bottom4.png';
-        }
+            }
         newBottom.className = "bottoms";
         bottomsLocation.appendChild(newBottom);
         bottomsOn = true;
+    }
+
+
+    function addShoes(shoe){
+        if(shoesOn==true){
+        let shoesClass = document.getElementsByClassName("shoes");
+        let oldShoes = shoesClass[1]; // Corrected the typo here
+        oldShoes.parentNode.removeChild(oldShoes); // Removed the old shirt
+    }
+        const shoesLocation = document.querySelector('.imagecontainer');
+        const newShoes = new Image();
+        if(shoe=="shoe1"){
+        newShoes.src = '/testImages/shoes1.png'; 
+        }
+        else if(shoe=='shoe2'){
+        newShoes.src = '/testImages/shoes2.png';
+        }
+        else if(shoe == 'shoe3'){
+        newShoes.src = '/testImages/shoes3.png';
+        }
+        else if(shoe == 'shoe4'){
+        newShoes.src = '/testImages/shoes4.png';
+        }
+        newShoes.className = "shoes";
+        shoesLocation.appendChild(newShoes);
+        shoesOn = true;
+    }
+
+    function addAccessories(acc){
+        if(accOn==true){
+        let accClass = document.getElementsByClassName("accessories");
+        let oldAcc = accClass[1]; // Corrected the typo here
+        oldAcc.parentNode.removeChild(oldAcc); // Removed the old shirt
+    }
+        const accLocation = document.querySelector('.imagecontainer');
+        const newAcc = new Image();
+        if(acc=="acc1"){
+        newAcc.src = '/testImages/acc1.png'; 
+        }
+        else if(acc=='acc2'){
+        newAcc.src = '/testImages/acc2.png';
+        }
+        else if(acc == 'acc3'){
+        newAcc.src = '/testImages/acc3.png';
+        }
+        else if(acc == 'acc4'){
+        newAcc.src = '/testImages/acc4.png';
+        }
+        newAcc.className = "accessories";
+        accLocation.appendChild(newAcc);
+        accOn = true;
+    }
+
+    function addHairs(hair){
+        if(hairOn==true){
+        let hairClass = document.getElementsByClassName("hair");
+        let oldHair = hairClass[1]; // Corrected the typo here
+        oldHair.parentNode.removeChild(oldHair); // Removed the old shirt
+    }
+        const hairLocation = document.querySelector('.imagecontainer');
+        const newHair = new Image();
+        if(hair == "hair1"){
+            newHair.src = '/testImages/hair1.png'; 
+        }
+        else if(hair=='hair2'){
+        newHair.src = '/testImages/hair2.png';
+        }
+        else if(hair == 'hair3'){
+        newHair.src = '/testImages/hair3.png';
+        }
+        else if(hair == 'hair4'){
+        newHair.src = '/testImages/hair4.png';
+        }
+        newHair.className = "hair";
+        hairLocation.appendChild(newHair);
+        hairOn = true;
     }
 </script>
 
