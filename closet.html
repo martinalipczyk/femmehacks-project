@@ -80,6 +80,12 @@
     left: 1;
     top: 400px;
 }
+.skirt1{
+    position: absolute;
+    left: 1;
+    top: 400px;
+    padding-left:10px;
+}
 </style>
 <div class ="row">
     
@@ -94,7 +100,7 @@
     <div class = "col">
         <table>
             <tr>
-              <td><button id="shirt1" class="clothing" onclick="addShirt1()"><img src="/testImages/blueshirt.png" /></button></td>
+              <td><button id="shirt1" class="clothing" onclick="addShirt('shirt1')"><img src="/testImages/blueshirt.png" /></button></td>
               <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
               <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
               <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
@@ -104,7 +110,7 @@
 
             </tr>
             <tr>
-                <td><button id="shirt1" class="clothing" onclick="addShirt1()"><img src="/testImages/blueshirt.png" /></button></td>
+                <td><button id="shirt2" class="clothing" onclick="addShirt('shirt2')"><img src="/testImages/shirt2.png" /></button></td>
                 <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
                 <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
                 <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
@@ -113,7 +119,7 @@
               
             </tr>
             <tr>
-                <td><button id="shirt1" class="clothing" onclick="addShirt1()"><img src="/testImages/blueshirt.png" /></button></td>
+                <td><button id="shirt3" class="clothing" onclick="addShirt('shirt3')"><img src="/testImages/shirt3.png" /></button></td>
                 <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
                 <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
                 <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
@@ -123,7 +129,7 @@
             </tr>
 
             <tr>
-                <td><button id="shirt1" class="clothing" onclick="addShirt1()"><img src="/testImages/blueshirt.png" /></button></td>
+                <td><button id="shirt1" class="clothing" onclick="addShirt1('shirt4')"><img src="/testImages/blueshirt.png" /></button></td>
                 <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
                 <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
                 <td><button id="skirt1" class="clothing" onclick ="addSkirt1()"><img src="/testImages/skirt.png"/></button></td>
@@ -149,18 +155,35 @@
 
 
 <script>
-    
-    function addShirt1(){
-        // if(isShirt==true){
-        //     let shirtClass = document.getElementsByClassName("shirt");
-        //     oldShirt.removeChild()
-        // }
-        const shirtLocation = document.querySelector('.imagecontainer');
-        const newShirt = new Image();
-        newShirt.src = '/testImages/blueshirt.png'; 
-        newShirt.className = "shirt";
-        shirtLocation.appendChild(newShirt);
+    let shirtOn = false;
+    let bottomsOn = false;
+    let hairOn = false;
+    let shoesOn = false;
+    let accessoriesOn = false;
+
+    function addShirt(shirt){
+    if(shirtOn==true){
+        let shirtClass = document.getElementsByClassName("shirt");
+        let oldShirt = shirtClass[0]; // Corrected the typo here
+        oldShirt.parentNode.removeChild(oldShirt); // Removed the old shirt
     }
+    const shirtLocation = document.querySelector('.imagecontainer');
+    const newShirt = new Image();
+    if(shirt=="shirt1"){
+        newShirt.src = '/testImages/blueshirt.png'; 
+    }
+    else if(shirt=='shirt2'){
+        newShirt.src = '/testImages/shirt2.png';
+    }
+    else if(shirt == 'shirt3'){
+        newShirt.src = '/testImages/shirt3.png';
+    }
+    
+    newShirt.className = "shirt";
+    shirtLocation.appendChild(newShirt);
+    shirtOn = true;
+}
+
 
     function addSkirt1(){
         const skirtLocation = document.querySelector('.imagecontainer');
@@ -168,6 +191,7 @@
         newSkirt.src = '/testImages/skirt.png'; 
         newSkirt.className = "bottoms";
         skirtLocation.appendChild(newSkirt);
+        skirtOn = true;
     }
 </script>
 
