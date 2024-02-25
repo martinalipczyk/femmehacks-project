@@ -9,7 +9,6 @@
     <title>closet</title>
 </head>
 <body>
-    <embed name="chillmusic" src="/music/backgroundmusic.mp3" loop="true" hidden="true" autostart="true">
     <!-- <script>
         let isShirt = false;
         let isBottoms = false;
@@ -40,24 +39,9 @@
             table {
             border-collapse: separate;
             border-spacing: 30px; /* Adjust the spacing as needed */
-            
-        }
 
-        button#journal {
-            background-color: transparent;
-            border: none;
-            width: 200px;
-            max-width: 400px;
-            height: auto; 
-        
-            /* margin: auto; */
         }
-
-        button#journal img {
-            width: 100%; 
-            height: auto; 
-        }
-            
+           
 
 
         </style>
@@ -93,6 +77,7 @@
     position: absolute;
     left: 1;
     top: 40px;
+    padding-left:-0px;
     padding-right: 10px;
 }
 #shirt2{
@@ -175,6 +160,19 @@
 }
 #acc4{
     padding-top:20px;
+    
+}
+#hair1{
+    padding-left:15px;
+}
+#hair2{
+    padding-left:15px;
+}
+#hair3{
+    padding-left:20px;
+}
+#hair4{
+    padding-left:15px;
 }
 /* #bottom4{
     absolute
@@ -187,7 +185,7 @@
 
 </style>
 <div class ="row">
-    
+
         <div class="imagecontainer">
             <img src = "/testImages/body.png" class = "character">
             <div class = "shirt">
@@ -229,7 +227,9 @@
                 <img class = "accClass4">
 
             </div>
+
         </div>
+        
     
 
     <div class = "col">
@@ -275,6 +275,9 @@
           </table>
                 
     </div>
+    <div class = "col">
+    </div>
+    
 </div>
 
 
@@ -440,12 +443,6 @@ function addBottoms(bottom) {
         hairLocation.appendChild(newHair);
     }
 </script>
-
-
-
-<button id="journal" onclick="window.location.href='journal.html'"><img src="/buttons/journalbut.png" /></button>
-                
-    
 </body>
 </html>
 
